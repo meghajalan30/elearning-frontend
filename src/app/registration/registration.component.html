@@ -1,0 +1,76 @@
+<div class="container">
+    <h2>REGISTRATION FORM</h2>
+    <div class="row">
+        <div class="col-12">
+            <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="userid">User Id</label>
+                    <input type="text" id="userid" formControlName="userId" class="form-control">
+                    <span class="help-block"
+                        *ngIf="!registrationForm.get('userId').valid && registrationForm.get('userId').touched">User Id
+                        is required.</span>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" formControlName="name" class="form-control">
+                    <span class="help-block"
+                        *ngIf="!registrationForm.get('name').valid && registrationForm.get('name').touched">Name is
+                        required.</span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" formControlName="email" class="form-control">
+                    <span class="help-block"
+                        *ngIf="!registrationForm.get('email').valid && registrationForm.get('email').touched">Email is
+                        required.</span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="text" id="password" formControlName="password" class="form-control">
+                    <span class="help-block"
+                        *ngIf="!registrationForm.get('password').valid && registrationForm.get('password').touched">Password is
+                        required.</span>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="text" id="phone" formControlName="phone" class="form-control">
+                    <span class="help-block"
+                        *ngIf="!registrationForm.get('phone').valid && registrationForm.get('phone').touched">Phone
+                        is required.</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" formControlName="address" class="form-control"></textarea>
+                    <span class="help-block"
+                        *ngIf="!registrationForm.get('address').valid && registrationForm.get('address').touched">Address is
+                        required.</span>
+                </div>
+             
+                <div class="form-group">
+                    <label for="photo">Photo</label>
+                    <input type="file" id="photo" formControlName="photo" class="form-control">
+                    <span class="help-block"
+                        *ngIf="!registrationForm.get('photo').valid && registrationForm.get('photo').touched">Photo is
+                        required.</span>
+                </div>
+                
+
+                <button type="submit" class="btn btn-primary" [disabled]="!registrationForm.valid">Register</button>
+            </form>
+        </div>
+    </div>
+    <!-- <div class="row">
+        <div class="col-12">
+            <p *ngIf="noContent">Sorry, we couldn't find any data for that query!</p>
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let note of notesList">
+                    <h3>{{note.id}} - {{note.title}}</h3>
+                    <p>{{note.description}}</p>
+                    <p>Reminder: {{note.reminder}}</p>
+                </li>
+            </ul>
+        </div>
+    </div> -->
+</div>
+
